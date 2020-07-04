@@ -1,0 +1,16 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Stack for all Jenkins resources, excludes lightsail as it isn't supported yet
+Resources:
+    JenkinsRecord:
+        DeletionPolicy: Retain
+        Type: AWS::Route53::RecordSetGroup
+        Properties:
+            HostedZoneId:
+                Fn::ImportValue: HaploRoutesCicd:ZoneId
+            RecordSets:
+                -   Name: jenkins.cicd.haplo.com.au.
+                    Type: A
+                    TTL: '300'
+                    ResourceRecords:
+                        - 3.24.167.134
