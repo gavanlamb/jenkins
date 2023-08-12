@@ -1,4 +1,4 @@
-# Haplo CICD Jenkins
+# Jenkins
 Jenkins setup information 
 
 ## Plugins to install 
